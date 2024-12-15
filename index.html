@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineer Pro Calculator AI 7.0</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Engineer Pro Calculator AI 7.0</h1>
+        <div class="header-buttons">
+            <button onclick="toggleModal('settingsModal')">Settings</button>
+            <button onclick="toggleModal('themesModal')">Themes</button>
+            <button onclick="toggleModal('historyModal')">View History</button>
+            <button onclick="toggleModal('scoringModal')">View Scoring</button>
+        </div>
+    </header>
+
+    <!-- Calculator Section -->
+    <div id="calculator" class="calculator">
+        <div id="secondaryDisplay" class="secondary-display">0</div>
+        <div id="currentDisplay" class="current-display">0</div>
+        <table class="calculator-table">
+            <tr>
+                <td><button onclick="clearDisplay()">C</button></td>
+                <td><button onclick="appendValue('(')">(</button></td>
+                <td><button onclick="appendValue(')')">)</button></td>
+                <td><button onclick="appendValue('÷')">÷</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="appendValue('7')">7</button></td>
+                <td><button onclick="appendValue('8')">8</button></td>
+                <td><button onclick="appendValue('9')">9</button></td>
+                <td><button onclick="appendValue('×')">×</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="appendValue('4')">4</button></td>
+                <td><button onclick="appendValue('5')">5</button></td>
+                <td><button onclick="appendValue('6')">6</button></td>
+                <td><button onclick="appendValue('-')">-</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="appendValue('1')">1</button></td>
+                <td><button onclick="appendValue('2')">2</button></td>
+                <td><button onclick="appendValue('3')">3</button></td>
+                <td><button onclick="appendValue('+')">+</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="appendValue('0')">0</button></td>
+                <td><button onclick="appendValue('.')">.</button></td>
+                <td><button onclick="calculateResult()">=</button></td>
+                <td><button onclick="appendValue('^')">^</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="appendValue('sin(')">sin</button></td>
+                <td><button onclick="appendValue('cos(')">cos</button></td>
+                <td><button onclick="appendValue('tan(')">tan</button></td>
+                <td><button onclick="appendValue('√')">√</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="appendValue('log(')">log</button></td>
+                <td><button onclick="appendValue('ln(')">ln</button></td>
+                <td><button onclick="storeIntermediate()">Store Mid</button></td>
+                <td><button onclick="showGraph()">Graph</button></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settingsModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Settings</h2>
+            <div class="settings-option">
+                <label for="fontSize">Font Size:</label>
+                <button onclick="setFontSize('small')">Small</button>
+                <button onclick="setFontSize('medium')">Medium</button>
+                <button onclick="setFontSize('large')">Large</button>
+            </div>
+            <button class="close-modal" onclick="toggleModal('settingsModal')">Close</button>
+        </div>
+    </div>
+
+    <!-- Themes Modal -->
+    <div id="themesModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Select Theme</h2>
+            <button onclick="setTheme('light')">Light</button>
+            <button onclick="setTheme('dark')">Dark</button>
+            <button onclick="setTheme('happy')">Happy</button>
+            <button class="close-modal" onclick="toggleModal('themesModal')">Close</button>
+        </div>
+    </div>
+
+    <!-- History Modal -->
+    <div id="historyModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Calculation History</h2>
+            <ul id="historyList"></ul>
+            <button class="close-modal" onclick="toggleModal('historyModal')">Close</button>
+        </div>
+    </div>
+
+    <!-- Scoring Modal -->
+    <div id="scoringModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Scoring</h2>
+            <div id="scoringOutput"></div>
+            <button class="close-modal" onclick="toggleModal('scoringModal')">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
