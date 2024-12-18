@@ -2,4 +2,4 @@
 
 ## has scoring abitlity
 
-### can help managers know how effeciant his workers are
+### can help managers know how effeciant theyre workers are
